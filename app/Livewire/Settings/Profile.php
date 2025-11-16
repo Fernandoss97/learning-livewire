@@ -29,7 +29,7 @@ class Profile extends Component
      */
     public function updateProfileInformation(): void
     {
-
+        /** @var \App\Models\User $user */
         $user = Auth::user();
 
         $validated = $this->validate([
@@ -61,6 +61,7 @@ class Profile extends Component
      */
     public function resendVerificationNotification(): void
     {
+        /** @var \App\Models\User $user */
         $user = Auth::user();
 
         if ($user->hasVerifiedEmail()) {
